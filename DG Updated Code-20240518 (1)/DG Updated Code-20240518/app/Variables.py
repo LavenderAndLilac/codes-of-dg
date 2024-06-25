@@ -1,0 +1,63 @@
+from timeit import default_timer as timer
+from datetime import datetime,timedelta
+
+def init():
+    global t1_hour;                    t1_hour = 6
+    global t1_minute;                  t1_minute = 15
+    global t2_hour;                    t2_hour = 12
+    global t2_minute;                  t2_minute = 15
+    global range_of_time;              range_of_time=30
+    global country_code;               country_code='IN'
+    global local_time;                 local_time = datetime.now()+timedelta(hours=5,minutes=30)
+    global id;                         id=0
+    global curr_soc;                   curr_soc = 0
+    global BB_Ahr_rating;              BB_Ahr_rating = 0
+    global cell_in_series;             cell_in_series = 0
+    global DG_db_status;               DG_db_status = 0
+    global IOT_restart_status;         IOT_restart_status = 0
+    global Correction_Time_hour;       Correction_Time_hour = 0
+    global Correction_Time_hour_status;Correction_Time_hour_status = 0
+    global Deviation_percentage_avg;   Deviation_percentage_avg = 0
+    global Sh_rate;                    Sh_rate = 0 
+    global DG_max;                     DG_max = 0
+    global night_percentage;           night_percentage = 0               # SOC remaining in battery bank, 40% for night
+    global day_percentage;             day_percentage = 0                 # SOC remaining in battery bank, 60% for day
+    global t_min_minutes_const;        t_min_minutes_const = 0
+    global n_min;                      n_min = 0                          # start time of the day, 8 am 
+    global n_max;                      n_max = 0                          # end time of the day, 10 pm
+    global n1_min;                     n1_min= 0                          # start time of after sunset period of the day, 6 pm
+    global n1_max;                     n1_max = 0                         # time time of after sunset period of the day, 10 pm
+    global battery_capacity;           battery_capacity = 0 
+    global k;                          k = 0                              # 0.5 (30 minutes) by default 
+    global Voltage;                    Voltage = []
+    global Current;                    Current = []
+    global DisChargeAhr;               DisChargeAhr = []
+    global SourceTime;                 SourceTime = []
+    global ChargeAhr;                  ChargeAhr = []
+    global Solar_power;                Solar_power = []
+    global Dg_power;                   Dg_power =[]
+    global Load_powerR;                Load_powerR= []                    # three phase load power
+    global Load_powerY;                Load_powerY= []                    # three phase load power
+    global Load_powerB;                Load_powerB= []                    # three phase load power
+    global S_Avg;                      S_Avg = []
+    global L_Avg;                      L_Avg = []
+    global dg_timer_value;             dg_timer_value = 0                 # increments when DG is on otherwise remains 0
+    global dg_runtime;                 dg_runtime=0
+    global i;                          i=0
+    global dg_power_min;               dg_power_min = 0            # hub daily once
+    global dg_timer_start;             dg_timer_start = timer()
+    global dg_timer_stop;              dg_timer_stop = 0
+    global DG_running_status;          DG_running_status = False          # True -> run DG, False-> Stop DG
+    global DG_Timer;                   DG_Timer = False                    # True -> DG timer is running, False->DG timer is not running
+    global SoH;                        SoH = 1
+    global discahrging_efficiency;     discahrging_efficiency=0.93
+    global charging_efficiency;        charging_efficiency=0.93
+    global DG_OF;                      DG_OF = []
+    global LoadMin;                    LoadMin=4 
+    global LoadMax;                    LoadMax=15
+    global NoDGMin;                    NoDGMin=4
+    global NoDGMax;                    NoDGMax=8
+    global SCalcutionTimeMin;          SCalcutionTimeMin=8
+    global SCalcutionTimeMax;          SCalcutionTimeMax=18
+    global MinBatteryV;                MinBatteryV=233
+    global forecast_api;               forecast_api='https://husk3pawrappers-dev.azurewebsites.net/'
